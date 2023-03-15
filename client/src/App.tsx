@@ -1,10 +1,13 @@
-import './App.css'
+import './app.css'
+import { useState } from "react"
+import Navbar from "./components/Navbar"
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState<any>(null);
+
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Navbar isLoggedIn={isLoggedIn}/>
   )
 }
 
