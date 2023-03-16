@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import Loading from "../components/Loading";
 
 const Callback = () => {
   const [searchParams] = useSearchParams();
@@ -28,7 +29,7 @@ const Callback = () => {
   }, [])
 
   return (
-    <div>Callback</div>
+    <Loading/>
   )
 }
 
