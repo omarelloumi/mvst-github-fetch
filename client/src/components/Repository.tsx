@@ -15,6 +15,7 @@ type Props = {
 }
 
 const Repository = ({repo}: Props) => {
+    const date = new Date(repo.updated_at)
 
   return (
     <div
@@ -26,7 +27,7 @@ const Repository = ({repo}: Props) => {
             <div className="flex items-center gap-4">
                 {repo.language && (<Language language={repo.language} getColor={getColor}/>)}
                 <p className="text-xs text-[rgb(36,41,47)] dark:text-white shrink-0"><FontAwesomeIcon icon={faStar} className="text-[rgb(36,41,47)] dark:text-white"/> {repo.stargazers_count}</p>
-                <p className="text-xs text-[rgb(36,41,47)] dark:text-white">Updated <ReactTimeAgo date={repo.updated_at} locale="en-US"/></p>
+                <p className="text-xs text-[rgb(36,41,47)] dark:text-white">Updated <ReactTimeAgo date={date} locale="en-US"/></p>
             </div>
         </div>
         <a

@@ -12,7 +12,7 @@ const Callback = () => {
   useEffect(() => {
     if (code && sessionStorage.getItem('token')===null) {
       const getToken = async () => {
-        await axios.get(`http://localhost:5000/getAccessToken?code=${code}`)
+        await axios.get(`${import.meta.env.VITE_GITHUB_API}/getAccessToken?code=${code}`)
               .then((res) => {
                 if (res.data.access_token) {
                   sessionStorage.setItem('token', res.data.access_token)

@@ -14,7 +14,7 @@ const Home = ({userData, setUserData}:Props) => {
   const navigate = useNavigate()
 
   const getUserData = async (token:string) => {
-    await axios.get("http://localhost:5000/getUserData", {
+    await axios.get(import.meta.env.VITE_GITHUB_API+"/getUserData", {
       headers: {
         Authorization: `Bearer ${token}`
       }

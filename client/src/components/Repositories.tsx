@@ -16,7 +16,7 @@ const Repositories = (props: Props) => {
     const [filtredRepos, setFiltredRepos] = useState([])
 
     const getRepositories = async (url:string, token:string) => {
-        await axios.post("http://localhost:5000/getRepos", {
+        await axios.post(import.meta.env.VITE_GITHUB_API+"/getRepos", {
                 url: url
             }, {
                 headers: {
