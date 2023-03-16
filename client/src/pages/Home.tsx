@@ -40,11 +40,11 @@ const Home = ({userData, setUserData}:Props) => {
       <>
         {!userData ? (<Loading/>) : (
           <div className="w-full flex items-center justify-center dark:bg-[rgb(36,41,47)]">
-            <div className="grid grid-cols-1 md:grid-cols-5 w-full max-w-7xl px-8 py-2 md:py-10">
-              <div className="col-span-2 w-full pr-8">
+            <div className="grid grid-cols-1 md:grid-cols-7 w-full max-w-7xl px-8 py-2 md:py-10">
+              <div className="col-span-1 md:col-span-2 w-full pr-0 md:pr-10">
                 <UserInfo userData={userData} />
               </div>
-              <div className="col-span-1 md:col-span-3 w-full border-t md:border-none border-t-gray-300">
+              <div className="col-span-1 md:col-span-5 w-full border-t md:border-none border-t-gray-300 py-4 md:py-0">
                 {(userData.repos_url && (
                   <Repositories url={userData.repos_url}/>
                 ))}

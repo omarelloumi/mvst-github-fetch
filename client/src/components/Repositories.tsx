@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Loading from './Loading'
+import Repository from './Repository'
 
 type Props = {
     url : string,
@@ -42,7 +41,16 @@ const Repositories = (props: Props) => {
 
   return (
     <>
-        {repositories.length<1 ? (<Loading/>) : (<div></div>)}
+        {repositories.length<1 ? (<Loading/>) : (
+            <div className='w-full flex flex-col gap-4'>
+                <h1 className='text-[rgb(36,41,47)] text-xl md:text-2xl'>You have <span className='font-bold'>{repositories.length}</span> repositories in total</h1>
+                <div className='w-full border-t border-t-gray-300 '>
+                    {repositories.map((repo:any, i) => (
+                        <Repository repo={repo} key={i}/>
+                    ))}
+                </div>
+            </div>
+        )}
     </>
   )
 }
