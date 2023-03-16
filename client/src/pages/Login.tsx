@@ -13,7 +13,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col gap-5 justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <h1 className="text-3xl text-red-500">
+        <h1 className="text-3xl text-[rgb(36,41,47)] dark:text-white">
             Please Login first
         </h1>
         <div className='text-2xl text-white min-h-14 hover:brightness-75'>

@@ -22,11 +22,11 @@ const Repository = ({repo}: Props) => {
     >
         <div className='flex flex-col gap-4'>
             <RepositoyName url={repo.html_url} name={repo.name} visibility={repo.visibility}/>
-            {repo.description && (<p className="text-sm text-[rgb(36,41,47)]">{repo.description}</p>)}
+            {repo.description && (<p className="text-sm text-[rgb(36,41,47)] dark:text-white">{repo.description}</p>)}
             <div className="flex items-center gap-4">
                 {repo.language && (<Language language={repo.language} getColor={getColor}/>)}
-                <p className="text-xs text-[rgb(36,41,47)] shrink-0"><FontAwesomeIcon icon={faStar} className="text-[rgb(36,41,47)]"/> {repo.stargazers_count}</p>
-                <p className="text-xs text-[rgb(36,41,47)]">Updated <ReactTimeAgo date={repo.updated_at} locale="en-US"/></p>
+                <p className="text-xs text-[rgb(36,41,47)] dark:text-white shrink-0"><FontAwesomeIcon icon={faStar} className="text-[rgb(36,41,47)] dark:text-white"/> {repo.stargazers_count}</p>
+                <p className="text-xs text-[rgb(36,41,47)] dark:text-white">Updated <ReactTimeAgo date={repo.updated_at} locale="en-US"/></p>
             </div>
         </div>
         <a

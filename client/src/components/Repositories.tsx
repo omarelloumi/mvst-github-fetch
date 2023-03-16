@@ -54,13 +54,13 @@ const Repositories = (props: Props) => {
     <>
         {repositories.length<1 ? (<Loading/>) : (
             <div className='w-full flex flex-col gap-4'>
-                <h1 className='text-[rgb(36,41,47)] text-xl md:text-2xl'>You have <span className='font-bold'>{repositories.length}</span> repositories in total</h1>
+                <h1 className='text-[rgb(36,41,47)] dark:text-white text-xl md:text-2xl'>You have <span className='font-bold'>{repositories.length}</span> repositories in total</h1>
                     <Search search={search} setSearch={setSearch} filtredRepos={filtredRepos}/>
                 <div className='w-full border-t border-t-gray-300'>
                     {filtredRepos.length > 0 ? filtredRepos.map((repo:any, i) => (
                         <Repository repo={repo} key={i}/>
                     )) :
-                    search.length > 0 ? <h1 className='text-[rgb(36,41,47)] text-xl md:text-2xl mt-4 text-center'>You don't have any repositories that match.</h1> :
+                    search.length > 0 ? <h1 className='text-[rgb(36,41,47)] dark:text-white text-xl md:text-2xl mt-4 text-center'>You don't have any repositories that match.</h1> :
                     repositories.length > 0 &&
                     repositories.map((repo:any, i) => (
                         <Repository repo={repo} key={i}/>

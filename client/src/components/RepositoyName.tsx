@@ -10,11 +10,11 @@ const RepositoyName = (props: Props) => {
         <a
             href={props.url}
             target='_blank'
-            className='text-[rgb(14,108,219)] text-xl font-semibold hover:underline underline-offset-4 decoration-[rgb(14,108,219)]'
+            className='text-[rgb(14,108,219)] dark:text-[rgb(88,166,255)] text-xl font-semibold hover:underline underline-offset-4 decoration-[rgb(14,108,219)]'
         >
             {props.name}
         </a>
-        <span className='text-[rgb(36,41,47)] border py-1 px-3 rounded-3xl text-xs font-semibold'>{props.visibility.charAt(0).toUpperCase()+props.visibility.slice(1)}</span>
+        <span className='text-[rgb(36,41,47)] dark:text-white border py-1 px-3 rounded-3xl text-xs font-semibold'>{props.visibility.charAt(0).toUpperCase()+props.visibility.slice(1)}</span>
     </div>
   )
 }
