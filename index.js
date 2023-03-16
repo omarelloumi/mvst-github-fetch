@@ -13,7 +13,7 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', async (req, res) =>{
+app.get('/getAccessToken', async (req, res) =>{
     req.query.code;
     var url = 'https://github.com/login/oauth/access_token';
     var params = "?client_id="+CLIENT_ID+"&client_secret="+CLIENT_SECRET+"&code="+req.query.code;

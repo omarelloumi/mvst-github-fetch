@@ -1,13 +1,24 @@
-import './app.css'
-import { useState } from "react"
 import Navbar from "./components/Navbar"
-
+import './app.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Callback from "./pages/Callback"
+import Login from "./pages/Login"
+import { useState } from "react"
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState<any>(null);
+  const [userData, setUserData] = useState({})
 
   return (
-    <Navbar isLoggedIn={isLoggedIn}/>
+    <>
+        <Router>
+          <Navbar/>
+            <Routes>
+              <Route path='/' element={<Home userData={userData} setUserData={setUserData} />}/>
+              <Route path='/callback' element={<Callback/>} />
+              <Route path='/login' element={<Login/>} />
+            </Routes>
+        </Router>
+    </>
   )
 }
 

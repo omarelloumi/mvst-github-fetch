@@ -16,11 +16,8 @@ const menu: Menu = {
     ]
 }
 
-type Props = {
-    isLoggedIn: Boolean
-}
 
-const Navbar = ({isLoggedIn} : Props) => {
+const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false)
     const menuClass = "overflow-hidden mt-4 w-full flex md:hidden flex-col transition-[max-height] duration-300"+(isMenuOpen ? ' max-h-[300px] mb-2' : ' max-h-0')
 
@@ -44,7 +41,7 @@ const Navbar = ({isLoggedIn} : Props) => {
                 <img src={githubLogo} className='h-8 w-8'/>
             </a>
             <div className='flex justify-center items-center hover:brightness-75 cursor-pointer h-8'>
-                <LoginButton isLoggedIn={isLoggedIn}/>
+                <LoginButton/>
             </div>
         </div>
         <div className={menuClass}>
