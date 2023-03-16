@@ -3,6 +3,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import UserInfo from "../components/UserInfo"
 import Loading from "../components/Loading"
+import Repositories from "../components/Repositories"
 
 type Props = {
   userData: any,
@@ -44,7 +45,9 @@ const Home = ({userData, setUserData}:Props) => {
                 <UserInfo userData={userData} />
               </div>
               <div className="col-span-1 md:col-span-3 w-full border-t md:border-none border-t-gray-300">
-
+                {(userData.repos_url && (
+                  <Repositories url={userData.repos_url}/>
+                ))}
               </div>
             </div>
           </div>

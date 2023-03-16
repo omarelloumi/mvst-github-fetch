@@ -46,6 +46,24 @@ app.get('/getUserData', async (req, res) =>{
     });
 });
 
+app.post('/getRepos', async (req, res) =>{
+    req.get('Authorization');
+    var url = req.body.url;
+    console.log("url",url);
+
+    await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': req.get('Authorization')
+        }
+    }).then(res => res.json())
+    .then(data => {
+        console.log(data);
+        res.json(data);
+    });
+});
+
 app.listen(PORT, function () {
   console.log('App listening on port '+PORT);
 });
