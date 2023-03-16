@@ -25,7 +25,6 @@ const Repositories = (props: Props) => {
             }).then((res) => {
                 if (res.data) {
                     setRepositories(res.data)
-                    console.log(res.data)
                 }
             }).catch((err) => {
                 console.log(err)

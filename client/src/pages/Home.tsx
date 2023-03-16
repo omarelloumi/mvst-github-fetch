@@ -21,7 +21,6 @@ const Home = ({userData, setUserData}:Props) => {
     }).then((res) => {
       if (res.data) {
         setUserData(res.data)
-        console.log(res.data)
       }
     }).catch((err) => {
       console.log(err)

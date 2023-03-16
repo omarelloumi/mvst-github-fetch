@@ -11,7 +11,6 @@ const LoginButton = () => {
       sessionStorage.removeItem('token')
       navigate('/login')
     }else{
-      console.log(clientID)
       const params = {
         client_id: clientID
       };

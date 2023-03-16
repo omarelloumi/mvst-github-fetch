@@ -3,6 +3,7 @@ var dotenv = require('dotenv').config();
 var cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 var bodyParser = require('body-parser');
+const path = require('path');
 
 const PORT = process.env.PORT || 5000;
 const CLIENT_ID = process.env.CLIENT_ID;
@@ -24,7 +25,6 @@ app.get('/getAccessToken', async (req, res) =>{
         }
     }).then(res => res.json())
     .then(data => {
-        console.log(data);
         res.json(data);
     });
 });
@@ -41,7 +41,6 @@ app.get('/getUserData', async (req, res) =>{
         }
     }).then(res => res.json())
     .then(data => {
-        console.log(data);
         res.json(data);
     });
 });
@@ -49,7 +48,6 @@ app.get('/getUserData', async (req, res) =>{
 app.post('/getRepos', async (req, res) =>{
     req.get('Authorization');
     var url = req.body.url;
-    console.log("url",url);
 
     await fetch(url, {
         method: 'GET',
@@ -59,11 +57,21 @@ app.post('/getRepos', async (req, res) =>{
         }
     }).then(res => res.json())
     .then(data => {
-        console.log(data);
         res.json(data);
     });
 });
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, './client/build')));
+    app.get('*', (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, './', 'client', 'build', 'index.html')
+    )
+  );
+} else {
+  app.get('/', (req, res) => res.send('Please set to production'));
+}
+
 app.listen(PORT, function () {
-  console.log('App listening on port '+PORT);
+    console.log('Listening on port ' + PORT);
 });
