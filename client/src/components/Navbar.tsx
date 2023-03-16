@@ -16,7 +16,6 @@ const menu: Menu = {
     ]
 }
 
-
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false)
     const menuClass = "overflow-hidden mt-4 w-full flex md:hidden flex-col transition-[max-height] duration-300"+(isMenuOpen ? ' max-h-[300px] mb-2' : ' max-h-0')

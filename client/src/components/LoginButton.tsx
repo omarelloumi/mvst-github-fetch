@@ -20,9 +20,6 @@ const LoginButton = () => {
       )}`;
       window.location.href = url;
     }
-
-
-
   };
 
   return <button className={className} onClick={handleLoginClick}>{sessionStorage.getItem('token')!==null ? ' Logout' : ' Login'}</button>

@@ -9,6 +9,7 @@ type Props = {
 }
 
 const Repositories = (props: Props) => {
+    const [search, setSearch] = useState("")
     const navigate = useNavigate()
     const [repositories, setRepositories] = useState([])
 
@@ -44,7 +45,8 @@ const Repositories = (props: Props) => {
         {repositories.length<1 ? (<Loading/>) : (
             <div className='w-full flex flex-col gap-4'>
                 <h1 className='text-[rgb(36,41,47)] text-xl md:text-2xl'>You have <span className='font-bold'>{repositories.length}</span> repositories in total</h1>
-                <div className='w-full border-t border-t-gray-300 '>
+                
+                <div className='w-full border-t border-t-gray-300'>
                     {repositories.map((repo:any, i) => (
                         <Repository repo={repo} key={i}/>
                     ))}

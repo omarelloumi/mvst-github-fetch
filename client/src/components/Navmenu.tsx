@@ -2,7 +2,6 @@ import { MenuItem, Menu } from '../Types'
 
 type Props = {
     menu: Menu
-    
 }
 
 const Navmenu = ({menu}: Props) => {
