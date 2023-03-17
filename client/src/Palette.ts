@@ -1,3 +1,9 @@
+/**
+ * Given a programming language name, return its corresponding color code
+ * @param name The name of the programming language
+ * @returns The color code of the programming language
+*/
+
 function getColor (name:string):string {
     let colors : any = {
         "1C Enterprise": "#814ccc",
