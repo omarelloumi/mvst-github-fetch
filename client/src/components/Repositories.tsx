@@ -32,7 +32,7 @@ const Repositories = (props: Props) => {
     * @returns A Promise that resolves to the repositories data in case of success, and rejects with an error message in case of failure.
     */
     const getRepositories = async (url:string, token:string) => {
-        await axios.post(import.meta.env.VITE_GITHUB_API+"/getRepos", {
+        await axios.post(process.env.REACT_APP_GITHUB_API+"/getRepos", {
                 url: url
             }, {
                 headers: {

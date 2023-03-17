@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom"
 */
 const LoginButton = () => {
   const navigate = useNavigate()
-  const clientID = import.meta.env.VITE_CLIENT_ID
+  const clientID = process.env.REACT_APP_CLIENT_ID
   const className = "px-6 py-2 rounded-md" + (sessionStorage.getItem('token')!==null ? ' bg-red-500':' bg-[rgb(45,164,78)]')
 
   /**

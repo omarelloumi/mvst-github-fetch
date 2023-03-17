@@ -30,7 +30,7 @@ const Home = ({userData, setUserData}:Props) => {
    * @returns {Promise<void>}
    */
   const getUserData = async (token:string) => {
-    await axios.get(import.meta.env.VITE_GITHUB_API+"/getUserData", {
+    await axios.get(process.env.REACT_APP_GITHUB_API+"/getUserData", {
       headers: {
         Authorization: `Bearer ${token}`
       }
