@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.get('/getAccessToken', async (req, res) =>{
     req.query.code;
-    var url = process.env.ACCESS_TOKEN_URL;
+    var url = "https://github.com/login/oauth/access_token";
     var params = "?client_id="+CLIENT_ID+"&client_secret="+CLIENT_SECRET+"&code="+req.query.code;
     await fetch(url+params, {
         method: 'POST',
