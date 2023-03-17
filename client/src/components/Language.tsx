@@ -1,3 +1,13 @@
+/**
+  * A component that renders a language name and a color-coded dot indicating its color
+  * @param {object} props - Component props
+  * @param {string} props.language - The name of the language to display
+  * @param {function} props.getColor - A function that takes a language name as a parameter and returns its corresponding color in RGB format
+  * @returns A React component
+  * @example
+  * <Language language="JavaScript" getColor={getColor} />
+*/
+
 type Props = {
     language: string
     getColor: (language: string) => string

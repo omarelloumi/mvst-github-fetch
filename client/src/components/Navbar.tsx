@@ -6,6 +6,15 @@ import { useState } from 'react'
 import Navmenu from './Navmenu'
 import LoginButton from './LoginButton'
 
+/**
+* Navbar component.
+* Displays a navigation bar with a menu that can be toggled on mobile devices, and a login button.
+* @returns A React component
+*/
+
+/**
+* Menu items to be displayed in the Navbar
+*/
 const menu: Menu = {
     menuItems: [
         { id : 1, name: 'Pulls', link: '/' },
@@ -16,10 +25,21 @@ const menu: Menu = {
     ]
 }
 
+/**
+* The Navbar component
+*/
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false)
+    /**
+    * @constant {string} menuClass - The classes applied to the menu based on its state.
+    */
     const menuClass = "overflow-hidden mt-4 w-full flex md:hidden flex-col transition-[max-height] duration-300"+(isMenuOpen ? ' max-h-[300px] mb-2' : ' max-h-0')
 
+    /**
+    * @function toggleMenu
+    * @returns {void}
+    * Toggles the menu on mobile devices.
+    */
     const toggleMenu = () => {
         setIsMenuOpen((open: Boolean) => !open)
     }

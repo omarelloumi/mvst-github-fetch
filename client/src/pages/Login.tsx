@@ -2,9 +2,16 @@ import { useEffect } from 'react'
 import LoginButton from '../components/LoginButton'
 import { useNavigate } from "react-router-dom"
 
+/**
+  * The Login component displays a login button that redirects users to GitHub's OAuth login page.
+  * If the user is already logged in, the component redirects them to the home page.
+  * @returns A React component
+*/
+
 const Login = () => {
     const navigate = useNavigate()
 
+    // Check if user is already logged in, redirect to home page if true
     useEffect(() => {
         if(sessionStorage.getItem('token')){
           navigate('/')

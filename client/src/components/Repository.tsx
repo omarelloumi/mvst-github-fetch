@@ -7,15 +7,23 @@ import ReactTimeAgo from 'react-time-ago'
 import RepositoyName from "./RepositoyName"
 import Language from "./Language"
 
+/**
+* A component that renders a single repository.
+* @param {object} props - Component props
+* @param {object} props.repo - The repository object
+* @returns A React component
+* @example
+* <Repository repo={repo} />
+*/
 
 TimeAgo.addDefaultLocale(en)
 
 type Props = {
-    repo : any
+    repo : any // The repository object
 }
 
 const Repository = ({repo}: Props) => {
-    const date = new Date(repo.updated_at)
+    const date = new Date(repo.updated_at) // Create a date object from the updated_at property
 
   return (
     <div

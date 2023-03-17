@@ -1,3 +1,13 @@
+/**
+* Renders user information including their name, username, bio, and follower/following count.
+* @param {object} props - Component props
+* @param {object} props.userData - The user data object containing user information
+* @returns A React component
+* @example
+* <UserInfo userData={userData} />
+*/
+
+
 type Props = {
     userData: any
 }

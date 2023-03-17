@@ -1,7 +1,16 @@
 import { MenuItem, Menu } from '../Types'
 
+/**
+* Component that renders a navigation menu based on a menu object.
+* @param {object} props - Component props
+* @param {object} props.menu - The menu object containing menu items
+* @returns A React component
+* @example
+* <Navmenu menu={menu} />
+*/
+
 type Props = {
-    menu: Menu
+    menu: Menu // Menu object containing menu items
 }
 
 const Navmenu = ({menu}: Props) => {

@@ -1,7 +1,16 @@
+/**
+  * A React component that renders a repository name with a link to its URL and visibility status.
+  * @param {Object} props - The props object.
+  * @param {string} props.url - The URL of the repository.
+  * @param {string} props.name - The name of the repository.
+  * @param {string} props.visibility - The visibility status of the repository.
+  * @returns A React component.
+*/
+
 type Props = {
-    url: string
-    name: string
-    visibility: string
+    url: string // The URL of the repository.
+    name: string // The name of the repository.
+    visibility: string // The visibility status of the repository.
 }
 
 const RepositoyName = (props: Props) => {

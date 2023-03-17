@@ -1,3 +1,14 @@
+/**
+    * A React component that renders a search input field for repositories.
+    * @param {Object} props - The props object.
+    * @param {string} props.search - The search string entered by the user.
+    * @param {Array} props.filtredRepos - The list of repositories filtered by search string.
+    * @param {Function} props.setSearch - A function that sets the search string.
+    * @returns A React component that renders a search input field for repositories.
+    * @example
+    * <Search search={search} filtredRepos={filtredRepos} setSearch={setSearch} />
+*/
+
 type Props ={
     search : string,
     filtredRepos : any,

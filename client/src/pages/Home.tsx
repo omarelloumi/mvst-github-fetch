@@ -5,6 +5,17 @@ import UserInfo from "../components/UserInfo"
 import Loading from "../components/Loading"
 import Repositories from "../components/Repositories"
 
+/**
+ * Home component
+ *
+ * @param {Object} props - The props object
+ * @param {Object} props.userData - The user data object
+ * @param {Function} props.setUserData - The function to set user data
+ * @returns A React component
+ * @example
+ * <Home userData={userData} setUserData={setUserData} />
+ */
+
 type Props = {
   userData: any,
   setUserData: any
@@ -13,6 +24,11 @@ type Props = {
 const Home = ({userData, setUserData}:Props) => {
   const navigate = useNavigate()
 
+  /**
+   * Fetch user data using access token
+   * @param {string} token - The access token string
+   * @returns {Promise<void>}
+   */
   const getUserData = async (token:string) => {
     await axios.get(import.meta.env.VITE_GITHUB_API+"/getUserData", {
       headers: {
