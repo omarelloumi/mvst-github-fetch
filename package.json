@@ -5,11 +5,9 @@
   "description": "MVST code test",
   "main": "index.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js",
-    "start": "node index.js",
+    "server": "nodemon server/index.js",
+    "start": "node server/index.js",
     "client": "npm run dev --prefix client",
     "build": "npm run build --prefix client"
   },
